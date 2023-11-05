@@ -1,0 +1,8 @@
+# Replace this with your XR!
+apiVersion: example.crossplane.io/v1
+kind: Claim
+metadata:
+  namespace: default
+  name: example-claim
+spec:
+  location: US

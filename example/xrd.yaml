@@ -1,0 +1,32 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xrs.example.crossplane.io
+spec:
+  group: example.crossplane.io
+  names:
+    kind: XR
+    plural: xrs
+  claimNames:
+    kind: Claim
+    plural: claims
+  versions:
+  - name: v1
+    served: true
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              location:
+                type: string            
+            required:
+            - location
+          status:
+            type: object
+            properties:
+              domainName:
+                type: string

@@ -24,10 +24,13 @@ spec:
               region: us-east-2
         patches:
         - type: FromCompositeFieldPath
-          fromFieldPath: "location"
+          fromFieldPath: "spec.location"
           toFieldPath: "spec.forProvider.region"
           transforms:
           - type: map
             map: 
               EU: "eu-north-1"
               US: "us-east-2"
+        - type: ToCompositeFieldPath
+          fromFieldPath: "status.atProvider.bucketDomainName"
+          toFieldPath: "status.domainName"
